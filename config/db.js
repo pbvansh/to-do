@@ -1,10 +1,10 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-const marividhi = process.env.MONGO_URI
+const URL = process.env.MONGO_URI
 
-const connetToMyVidhi = async()=>{
+const coonectDB = async()=>{
     try {
-       const conn = await mongoose.connect(marividhi)
+       const conn = await mongoose.connect(URL)
        console.log("connect to : "+conn.connection.host);
 
     } catch (error) {
@@ -12,4 +12,4 @@ const connetToMyVidhi = async()=>{
     }
 }
 
-module.exports = connetToMyVidhi
+module.exports = coonectDB
